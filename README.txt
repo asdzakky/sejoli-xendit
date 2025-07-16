@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+* 1.0.8 *
+- Fix invoice duration
+
 * 1.0.7 *
 - Fix callback webhook payment using custom redirect
 

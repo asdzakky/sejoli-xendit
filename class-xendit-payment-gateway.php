@@ -737,12 +737,15 @@ final class SejoliXendit extends \SejoliSA\Payment{
 
             if ( !empty( $secret_key ) ) {
 
+                $timer_invoice = absint(sejolisa_carbon_get_theme_option('sejoli_countdown_timer'));
+                $invoice_duration = $timer_invoice * 3600;
+
                 $set_params = [ 
                     'external_id'      => $previx_refference.$signature,
                     'amount'           => $payment_amount,
                     'description'      => __('Payment for Order No #', 'sejoli-xendit') . $order['ID'],
                     'payer_email'      => $order['user']->user_email,
-                    'invoice_duration' => 86400,
+                    'invoice_duration' => $invoice_duration,
                     'customer' => [
                         'given_names'   => $recipient_name,
                         'surname'       => $recipient_name,
